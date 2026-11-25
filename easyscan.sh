@@ -10,7 +10,7 @@ port_exp='^(0|[1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0
 if [[ $args_num != "2" || ! $network =~ $network_exp || ! $port =~ $port_exp ]]; then
 	echo -e "\nEasyScan v1.0"
 	echo "----------------------------------------------------"
-	echo "How to use: ./easyscan.sh <IPv4 Network> <Port>"
+	echo "Usage: ./easyscan.sh <First three IPv4 octets> <TCP port>"
 	echo "Example: ./easyscan.sh 192.168.0 80"
 	exit 1
 fi
