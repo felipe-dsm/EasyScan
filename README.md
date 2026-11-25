@@ -1,6 +1,6 @@
 # EasyScan
 
-EasyScan is a Bash script that uses `hping3` to check a single TCP port across a `/24` IPv4 network. It reports response lines that contain `flags=SA` (SYN/ACK).
+EasyScan is a Bash script that uses `hping3` to check a single TCP port across a `/24` IPv4 network. It reports the port and IP address for each host whose response contains `flags=SA` (SYN/ACK).
 
 ## Requirements
 
@@ -17,14 +17,14 @@ EasyScan is a Bash script that uses `hping3` to check a single TCP port across a
 
 ## Output
 
-EasyScan checks host addresses ending in `.1` through `.254`. The checks run in parallel, so response lines can appear in any order.
+EasyScan checks host addresses ending in `.1` through `.254`. The checks run in parallel, so results can appear in any order.
 
 ```text
 EasyScan v1.0
 ----------------------------------------------------
 Hosts that replied with SYN/ACK:
 
-len=46 ip=192.168.0.12 flags=SA DF seq=0 ttl=64 id=0 win=64240 rtt=0.5 ms
+Port 80 is open on host 192.168.0.12
 ```
 
 An empty list means the script printed no matching response lines. Because the script suppresses `hping3` error messages, command errors can also produce an empty list.
